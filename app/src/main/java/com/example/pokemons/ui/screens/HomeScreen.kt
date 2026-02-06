@@ -13,6 +13,7 @@ import com.example.pokemons.model.Pokemon
 import com.example.pokemons.model.PokemonType
 import com.example.pokemons.model.Sprites
 import com.example.pokemons.ui.theme.PokemonsTheme
+import com.example.uicore.LoadingScreen
 
 @Composable
 fun HomeScreen(
