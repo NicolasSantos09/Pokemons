@@ -15,6 +15,8 @@ lifecycleRuntime = "2.8.7"
 lifecycleViewModel = "2.8.7"
 okhttp3OkHttp = "4.12.0"
 okhttp3LogginInterceptor = "4.12.0"
+appcompat = "1.7.1"
+material = "1.13.0"
 
 [libraries]
 # LifeCycle
@@ -44,12 +46,15 @@ io-coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 # OkHttp logging interceptor
 okhttp3-okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp3OkHttp" }
 okhttp3-loggin-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp3LogginInterceptor" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 
 [bundles]
 # Group related networking libraries together for easy import

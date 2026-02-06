@@ -64,4 +64,6 @@ dependencies {
     // Retrofit
     implementation(libs.bundles.restAPI.libs)
     implementation(libs.io.coil)
+
+    implementation(project(":uicore"))
 }
