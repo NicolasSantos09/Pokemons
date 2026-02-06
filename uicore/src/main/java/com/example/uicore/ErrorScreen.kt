@@ -1,4 +1,4 @@
-package com.example.pokemons.ui.screens
+package com.example.uicore
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -13,11 +13,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.pokemons.R
-import com.example.pokemons.ui.theme.PokemonsTheme
+import com.example.uicore.R
 
 /**
- * The home screen displaying error message with re-attempt button.
+ * A screen displaying error message with re-attempt button.
  */
 @Composable
 fun ErrorScreen(retryAction: () -> Unit, modifier: Modifier = Modifier) {
@@ -39,7 +38,5 @@ fun ErrorScreen(retryAction: () -> Unit, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun ErrorScreenPreview() {
-    PokemonsTheme {
-        ErrorScreen({})
-    }
+    ErrorScreen({})
 }
