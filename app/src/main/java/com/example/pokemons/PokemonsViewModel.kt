@@ -26,9 +26,9 @@ class PokemonsViewModel(private val pokemonsRepository: PokemonsRepository) : Vi
         viewModelScope.launch {
             uiState = PokemonsUiState.Loading
 
-//            Log.d("PokemonsDebug", pokemonsRepository.getPokemons().toString());
+            Log.d("PokemonsDebug", pokemonsRepository.getPokemons().toString());
             uiState = try {
-                PokemonsUiState.Success(pokemonsRepository.getPokemons().results)
+                PokemonsUiState.Success(pokemonsRepository.getPokemons())
             } catch (e: IOException) {
                 PokemonsUiState.Error
             } catch (e: HttpException) {

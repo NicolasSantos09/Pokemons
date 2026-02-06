@@ -17,18 +17,14 @@ data class Pokemon(
 
 @Serializable
 data class Sprites(
-    @SerialName(value = "front_default")
-    val frontDefault: String,
-    @SerialName(value = "back_default")
-    val backDefault: String,
+    @SerialName(value = "front_default") val frontDefault: String,
+    @SerialName(value = "back_default") val backDefault: String,
 )
 
 @Serializable
 data class PokemonType(
     val slot: Int,
     val type: PokeType,
-    @SerialName(value = "img_src")
-    val imgSrc: String
 )
 
 @Serializable

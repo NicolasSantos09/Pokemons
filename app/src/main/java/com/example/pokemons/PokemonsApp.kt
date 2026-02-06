@@ -22,7 +22,7 @@ fun PokemonsApp() {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        topBar = { MarsTopAppBar(scrollBehavior = scrollBehavior) }
+        topBar = { PokemonsTopAppBar(scrollBehavior = scrollBehavior) }
     ) {
         Surface(
             modifier = Modifier.fillMaxSize()
@@ -39,7 +39,7 @@ fun PokemonsApp() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MarsTopAppBar(scrollBehavior: TopAppBarScrollBehavior, modifier: Modifier = Modifier) {
+fun PokemonsTopAppBar(scrollBehavior: TopAppBarScrollBehavior, modifier: Modifier = Modifier) {
     CenterAlignedTopAppBar(
         scrollBehavior = scrollBehavior,
         title = {

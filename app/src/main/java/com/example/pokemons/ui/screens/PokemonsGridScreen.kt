@@ -11,12 +11,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.pokemons.model.Pokemon
+import com.example.pokemons.model.PokemonType
+import com.example.pokemons.model.PokeType
 import com.example.pokemons.model.RespResult
+import com.example.pokemons.model.Sprites
 import com.example.pokemons.ui.theme.PokemonsTheme
 
 @Composable
 fun PokemonsGridScreen(
-    pokemons: List<RespResult>,
+    pokemons: List<Pokemon>,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(0.dp),
 ) {
@@ -45,9 +49,24 @@ fun PokemonsGridScreen(
 fun PhotosGridScreenPreview() {
     PokemonsTheme {
         val mockData = List(10) {
-            RespResult(
+            Pokemon(
+                id = 123,
+                order = 1,
                 name = "bulbasaur",
-                url = "https://pokeapi.co/api/v2/pokemon/1/"
+                sprites = Sprites(
+                    frontDefault = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+                    backDefault = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"
+                ),
+                types = listOf(
+                    PokemonType(
+                        slot=1,
+                        type= PokeType(name="grass")
+                    ),
+                    PokemonType(
+                        slot=2,
+                        type= PokeType(name="poison")
+                    )
+                )
             )
         }
         PokemonsGridScreen(mockData)

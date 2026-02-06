@@ -10,7 +10,6 @@ composeBom = "2024.09.00"
 serializationCore = "1.8.0"
 jakeSerialization = "1.0.0"
 retrofit = "3.0.0"
-retrofitConverter = "2.9.0"
 coil = "2.7.0"
 lifecycleRuntime = "2.8.7"
 lifecycleViewModel = "2.8.7"
@@ -38,7 +37,6 @@ androidx-compose-material3 = { group = "androidx.compose.material3", name = "mat
 # JSON Converter
 serialization-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serializationCore" }
 jakewharton-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "jakeSerialization" }
-retrofit-converter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitConverter" }
 # Retrofit
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 # Coil Core
@@ -51,13 +49,13 @@ okhttp3-loggin-interceptor = { group = "com.squareup.okhttp3", name = "logging-i
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
 [bundles]
 # Group related networking libraries together for easy import
 restAPI-libs = [
     "retrofit-core",
     "serialization-core",
-    "retrofit-converter",
     "jakewharton-serialization",
     "okhttp3-okhttp",
     "okhttp3-loggin-interceptor"

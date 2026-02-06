@@ -1,10 +1,13 @@
 package com.example.pokemons.data
 
 import com.example.pokemons.network.PokemonsApiService
+import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import kotlinx.serialization.json.Json
+//import kotlinx.serialization.ExperimentalSerializationApi
+import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 class DefaultAppContainer : AppContainer {
@@ -27,10 +30,18 @@ class DefaultAppContainer : AppContainer {
         .writeTimeout(30, TimeUnit.SECONDS)
         .build()
 
+    val json = Json {
+        // Configure behavior like ignoring unknown keys if your data class is a subset of the JSON
+        ignoreUnknownKeys = true
+        // Allow for default values for missing fields without throwing an exception
+        explicitNulls = false
+    }
+    val contentType = "application/json".toMediaType()
+
     private val retrofit: Retrofit = Retrofit.Builder()
-        .addConverterFactory(GsonConverterFactory.create())
         .baseUrl(baseUrl)
         .client(okHttpClient)
+        .addConverterFactory(json.asConverterFactory(contentType))
         .build()
 
     private val retrofitService: PokemonsApiService by lazy {
